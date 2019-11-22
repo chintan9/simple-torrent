@@ -10,5 +10,5 @@ name = "go"
 enabled = true
 
   [analyzers.meta]
-  import_path = "github.com/rkt/rkt"
+  import_path = "github.com/chintan9/simple-torrent"
   dependencies_vendored = true
