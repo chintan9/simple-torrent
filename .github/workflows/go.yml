@@ -23,7 +23,7 @@ jobs:
     - name: Get dependencies
       run: |
         go get -v -u github.com/shuLhan/go-bindata/...
-        export PATH=$HOME/go/bin:$PASH
+        export PATH=$HOME/go/bin:$PATH
         go get -v -t -d ./...
         pushd static
         bash -x generate.sh
