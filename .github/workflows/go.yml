@@ -40,14 +40,14 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       with:
         files: |
-          cloud-torrent_windows_amd64.exe.gz
-          cloud-torrent_windows_386.exe.gz
-          cloud-torrent_linux_amd64.gz
-          cloud-torrent_linux_386.gz
-          cloud-torrent_linux_arm64.gz
-          cloud-torrent_linux_arm.gz
-          cloud-torrent_linux_mipsle.gz
-          cloud-torrent_linux_mips.gz
+          scripts/build/cloud-torrent_windows_amd64.exe.gz
+          scripts/build/cloud-torrent_windows_386.exe.gz
+          scripts/build/cloud-torrent_linux_amd64.gz
+          scripts/build/cloud-torrent_linux_386.gz
+          scripts/build/cloud-torrent_linux_arm64.gz
+          scripts/build/cloud-torrent_linux_arm.gz
+          scripts/build/cloud-torrent_linux_mipsle.gz
+          scripts/build/cloud-torrent_linux_mips.gz
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
