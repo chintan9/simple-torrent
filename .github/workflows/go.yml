@@ -22,7 +22,11 @@ jobs:
 
     - name: Get dependencies
       run: |
+        go get -u github.com/shuLhan/go-bindata/...
         go get -v -t -d ./...
+        pushd static
+        bash -x generate.sh
+        popd
 
     - name: Build
       run: |
