@@ -23,14 +23,14 @@ jobs:
     - name: Get dependencies
       run: |
         go get -v -u github.com/shuLhan/go-bindata/...
-        export PATH=$HOME/go/bin:$PATH
         go get -v -t -d ./...
-        pushd static
-        bash -x generate.sh
-        popd
 
     - name: Build
       run: |
+        export PATH=$HOME/go/bin:$PATH
+        pushd static
+        bash -x generate.sh
+        popd
         bash scripts/ci_release.sh windows amd64
         bash scripts/ci_release.sh windows 386
         bash scripts/ci_release.sh linux amd64
