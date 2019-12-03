@@ -23,12 +23,9 @@ jobs:
     - name: Get dependencies
       run: |
         go get -v -t -d ./...
-        mkdir bin
 
     - name: Build
       run: |
-        GITVER=$(git describe --tags || git rev-parse --short HEAD)
-        CGO_ENABLED=0 GOARCH=$ARCH GOOS=$OS go build -o ${BUILDDIR}/${BINFILE} -ldflags "-s -w -X main.VERSION=$GITVER"
         bash scripts/ci_release.sh windows amd64
         bash scripts/ci_release.sh windows 386
         bash scripts/ci_release.sh linux amd64
